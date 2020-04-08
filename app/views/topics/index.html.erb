@@ -19,6 +19,11 @@
           <% end %>
           <%= topic.favorite_users.count %>
           <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+          <% if topic.user_id == current_user.id %>
+            <%= link_to 'Edit', " /topics/#{topic.id}/edit" %>
+            <%= link_to 'Delete', "topics/#{topic.id}", method: :delete %>
+            
+          <% end %>
           <p class="topic-text">
             <%= topic.description %>
           </p>

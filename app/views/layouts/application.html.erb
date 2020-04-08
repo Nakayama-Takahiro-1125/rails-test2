@@ -21,6 +21,9 @@
         <% end %>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
+          <li class= "login_name">
+            <%= current_user.name %>
+          </li>
           <li>
             <%=link_to favorites_index_path do %>
               <%= image_tag "icons/heart.png" %>

@@ -44,6 +44,8 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
 end
 
 group :development do
