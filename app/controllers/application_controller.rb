@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :set_search
   protect_from_forgery with: :exception
   
   add_flash_types :success, :info, :warning, :danger
@@ -11,5 +12,10 @@ class ApplicationController < ActionController::Base
   
   def logged_in?
     !current_user.nil?
+  end
+  
+  def set_search
+    @search = Topic.search(params[:q])
+    @topics = @search.result
   end
 end

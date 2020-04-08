@@ -21,6 +21,14 @@
         <% end %>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
+          <li>
+            <%= search_form_for @search do |f| %>
+              <div class="form-group">
+                <%= f.text_field :description_cont, class: "form-control" %>
+                <%= f.submit "Search" %>
+              </div>
+            <% end %>
+          </li>
           <li class= "login_name">
             <%= current_user.name %>
           </li>
